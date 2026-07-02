@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: '0 * * * *' #standard cron syntax
   workflow_dispatch: #allows manual triggering via the github UI for testing
+  push:
+    branches: [ main ]
 
 
 jobs:
