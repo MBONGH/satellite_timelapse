@@ -1,0 +1,35 @@
+name: Hourly Satellite Downloader
+
+on:
+  schedule:
+    - cron: '*/1 * * * *' #standard cron syntax
+  workflow_dispatch: #allows manual triggering via the github UI for testing
+
+
+jobs:
+  download-and-commit:
+    runs-on: ubuntu-latest
+
+    permissions: write #gives the action permission to push images back to the repo
+
+    steps:
+    #step 1: clone your repo onto the github linux runner
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    #step 2: Make sure the script has execute permissions
+    - name: Make script executable
+    run: chmod +x ./download_satellite.sh
+
+    #step 3: Run your actual Bash script to download the image
+    - name: Run Downloader Script
+      run: ./download_satellite.sh
+
+    #step 4: Commit and Push the new image back to the github repo
+    - name: Commit and Push Images
+    run: |
+      git config --global user.name "GitHub Action Bot"
+      git config --global user.email "actions@github.com"
+      git add images/
+      #only commit if there are actually new images to avoid errors
+    git diff --quiet && git diff --staged --quiet || (git commit -m "Automated download: $(date)" && git push
