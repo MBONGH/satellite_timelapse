@@ -5,8 +5,8 @@ on:
   schedule:
     - cron: '0 * * * *' # Standard cron syntax
   workflow_dispatch:     # Allows manual triggering via the GitHub UI/CLI
-  push:
-    branches: [ main ]
+    #push:
+    #branches: [ main ]
 
 jobs:
   download-and-commit:
