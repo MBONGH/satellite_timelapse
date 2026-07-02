@@ -1,3 +1,4 @@
+# Kickstart GitHub Actions
 name: Hourly Satellite Downloader
 
 on:
