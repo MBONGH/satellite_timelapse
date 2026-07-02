@@ -3,7 +3,7 @@ name: Hourly Satellite Downloader
 
 on:
   schedule:
-    - cron: '0 * * * *' # Standard cron syntax
+    - cron: '0/10 * * * *' # Standard cron syntax
   workflow_dispatch:     # Allows manual triggering via the GitHub UI/CLI
     #push:
     #branches: [ main ]
