@@ -1,3 +1,10 @@
+#Script for Git to automatically run my downloader script
+#Written mainly by AI
+#Owned by Matthew Boling
+#Last modified: 20260706
+
+
+
 # Kickstart GitHub Actions
 name: Hourly Satellite Downloader
 
