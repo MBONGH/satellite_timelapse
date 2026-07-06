@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #This is a script to download the latest GOES image from NOAA's site, and stitch them together to make a time-lapse animation.
+#Created by Matthew Boling
+#Last updated: 20260706
 
 
 #Downloads the image, renaming it with the current date and time
